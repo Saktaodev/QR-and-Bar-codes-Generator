@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR and Bar codes Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/JsBarcode.all.min.js"></script>
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+</head>
+<body>
+    <div class="container">
+        <h1>QR and Bar codes Generator</h1>
+        <div class="form-group">
+            <label for="codeType">Code Type:</label>
+            <select id="codeType">
+                <option value="qr">QR code</option>
+                <option value="barcode">Bar code</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="codeData">Code information:</label>
+            <input type="text" id="codeData" placeholder="Introduce the information for the code">
+        </div>
+        <div id="qrOptions" class="form-group">
+            <label for="qrSize">QR Size:</label>
+            <input type="number" id="qrSize" value="256" min="100" max="500">
+            <label for="qrColor">QR color:</label>
+            <input type="color" id="qrColor" value="#000000">
+            <label for="qrBgColor">Background color:</label>
+            <input type="color" id="qrBgColor" value="#ffffff">
+        </div>
+        <div id="barcodeOptions" class="form-group" style="display: none;">
+            <label for="barcodeFormat">Bar Code Format:</label>
+            <select id="barcodeFormat">
+                <option value="CODE128">CODE128</option>
+            </select>
+            <label for="barcodeWidth">barcodeWidth:</label>
+            <input type="number" id="barcodeWidth" value="2" min="1" max="10">
+            <label for="barcodeHeight">barcodeHeight:</label>
+            <input type="number" id="barcodeHeight" value="100" min="50" max="300">
+        </div>
+        <button id="generateBtn">Generate Code</button>
+        <a id="downloadBtn" style="display: none;" download="codigo.png">Download code</a>
+        <div id="codeResult" class="code-result"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
